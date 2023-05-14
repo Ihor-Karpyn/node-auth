@@ -1,27 +1,20 @@
 import React from 'react';
 import './App.scss';
-import { GoodsList } from './GoodsList';
+import { Login } from './Login';
+import { Reg } from './Reg';
 
-// import { getAll, get5First, getRed } from './api/goods';
-// or
-// import * as goodsAPI from './api/goods';
+export const App: React.FC = () => {
+  const [authUser, setAuthUser] = React.useState<any>(null);
 
-export const App: React.FC = () => (
-  <div className="App">
-    <h1>Dynamic list of Goods</h1>
+  return (
+    <div className="App">
+      <p>
+        {JSON.stringify(authUser)}
+      </p>
 
-    <button type="button" data-cy="all-button">
-      Load all goods
-    </button>
+      <Reg />
 
-    <button type="button" data-cy="first-five-button">
-      Load 5 first goods
-    </button>
-
-    <button type="button" data-cy="red-button">
-      Load red goods
-    </button>
-
-    <GoodsList goods={[]} />
-  </div>
-);
+      <Login />
+    </div>
+  );
+};
