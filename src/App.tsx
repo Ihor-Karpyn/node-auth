@@ -2,9 +2,10 @@ import React from 'react';
 import './App.scss';
 import { Login } from './Login';
 import { Reg } from './Reg';
+import { Confirm } from './Confirm';
 
 export const App: React.FC = () => {
-  const [authUser, setAuthUser] = React.useState<any>(null);
+  const [authUser] = React.useState<any>(null);
 
   return (
     <div className="App">
@@ -15,6 +16,8 @@ export const App: React.FC = () => {
       <Reg />
 
       <Login />
+
+      <Confirm />
     </div>
   );
 };
